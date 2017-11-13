@@ -1,6 +1,6 @@
 if(window.localStorage.getItem("register")){
     var Register =  window.localStorage.getItem("register");
-    var SE = JSON.parse(Register).email;
+    var SE = JSON.parse(Register).username;
     $("#dLabel").text(SE);
 }
 
@@ -9,21 +9,29 @@ if (window.localStorage.getItem('Type')) {
     var SType = JSON.parse(Stype).type;
     if (SType === "video") {
         $(".nav-tabs li:nth-child(1)").addClass("active");
+        $("div#sp").addClass("active in");
+        $("div#sp").siblings().removeClass("active in");
         $(".nav-tabs li:nth-child(1)").siblings().removeClass("active");
         $(".page-header").html("视频");
         window.localStorage.removeItem('Type');
     } else if (SType === "audio") {
         $(".nav-tabs li:nth-child(2)").addClass("active");
+        $("div#yp").addClass("active in");
+        $("div#yp").siblings().removeClass("active in");
         $(".nav-tabs li:nth-child(2)").siblings().removeClass("active");
         $(".page-header").html("音频");
         window.localStorage.removeItem('Type');
     } else if (SType === "image") {
         $(".nav-tabs li:nth-child(3)").addClass("active");
+        $("div#tp").addClass("active in");
+        $("div#tp").siblings().removeClass("active in");
         $(".nav-tabs li:nth-child(3)").siblings().removeClass("active");
         $(".page-header").html("图片");
         window.localStorage.removeItem('Type');
     } else if (SType === "document") {
         $(".nav-tabs li:nth-child(4)").addClass("active");
+        $("div#wj").addClass("active in");
+        $("div#wj").siblings().removeClass("active in");
         $(".nav-tabs li:nth-child(4)").siblings().removeClass("active");
         $(".page-header").html("文章");
         window.localStorage.removeItem('Type');

@@ -1,11 +1,9 @@
-
+//---localStorage
 if(window.localStorage.getItem("register")){
     var Register =  window.localStorage.getItem("register");
-    var SE = JSON.parse(Register).email;
+    var SE = JSON.parse(Register).username;
     $("#dLabel").text(SE);
 }
-
-//---localStorage
 var LFile = window.localStorage.getItem("file");
 var Ftype =JSON.parse(LFile).type;
 if(Ftype=="video"){
@@ -24,13 +22,13 @@ if(Ftype=="video"){
     $("section#picture div#title3 div:nth-child(4)").children("h4").html(JSON.parse(LFile).upuser);
     $("section#picture div#title3 div:nth-child(5)").children("h4").html(JSON.parse(LFile).uptime);
     if(Ftype=="image"){
-        $("section#picture img").attr("src","img/pic1.jpg");
+        $("section#picture img").attr("src","assets/img/pic1.jpg");
     }else if(Ftype=="zip"){
-        $("section#picture img").attr("src","img/zip.jpg");
+        $("section#picture img").attr("src","assets/img/zip.jpg");
     }else if(Ftype=="document"){
-        $("section#picture img").attr("src","img/txt.png");
+        $("section#picture img").attr("src","assets/img/txt.png");
     }else if(Ftype=="other"){
-        $("section#picture img").attr("src","img/txt.png");
+        $("section#picture img").attr("src","assets/img/txt.png");
     }
 }
 
